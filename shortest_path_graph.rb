@@ -13,7 +13,7 @@ class Graph
 
   def shortest_distance
     distances[starting_node - 1] = 0
-    nodes.length.times do |i|
+    nodes.length.times do |_i|
       edges.each do |edge|
         if distances[edge.from - 1] + edge.weight < distances[edge.to - 1]
           distances[edge.to - 1] = distances[edge.from - 1] + edge.weight
@@ -24,7 +24,7 @@ class Graph
         end
       end
     end
-    distances.reject.with_index{|v, i| i == starting_node - 1 }.map{ |x| x.infinite? ? -1 : x }
+    distances.reject.with_index { |_v, i| i == starting_node - 1 }.map { |x| x.infinite? ? -1 : x }
   end
 end
 
@@ -39,16 +39,12 @@ class Edge
 end
 
 queries = gets.chomp.to_i
-graphs = queries.times.map do
+queries.times do
   num_nodes, num_edges = gets.chomp.split.map(&:to_i)
   nodes = num_nodes.times.map { |i| i + 1 }
   edges = num_edges.times.map do
     gets.chomp.split.map(&:to_i)
   end
   starting_node = gets.chomp.to_i
-  Graph.new(nodes, edges, starting_node)
-end
-
-graphs.each do |graph|
-  puts graph.shortest_distance.join(' ')
+  puts Graph.new(nodes, edges, starting_node).shortest_distance.join(' ')
 end
