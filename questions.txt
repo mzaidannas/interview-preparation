@@ -1,0 +1,54 @@
+Questions:
+
+1. Introduction
+2. Ticket re-estimation procedure (Project management tools)
+- You shouldn't re-estimate
+- reasons (unclear requirements, critical bugs, unforeseen changes pushed to current sprint)
+- re-estimations pushes back the whole sprint at worst cases and sometimes changes are accommodated
+3. Communication management
+- Daily Scrum Meetings
+- Weekly/ Bi-Weekly sprint planning meetings
+- Clear understanding of requirements
+- Client Emails in case of any feedback / change
+-
+
+4. Ruby or Rails upgrade procedure (Test cases, multi stage upgrade path)
+- upto 80% test coverage
+- updated to latest patch version
+- dual boot to avoid breaking for all users
+- Ruby on Rails changelog and depreciations
+- First push changes to subset of users. Gather feedback, error rate and when it looks stable then incrementally update to rest
+5. Refactoring
+- Query Objects
+- Service Objects
+- Generic Exceptions with translations/transformations
+- Global Error handling
+- Async programming
+- Generic API Wrappers
+- API Exception handling
+- Generic collections/datatable/paginated data classes
+- Generic data controllers (Meta Programming)
+- Config vs Secrets separations
+- Assets pipeline improvements
+- Roles/Permission based Authorization system
+- Rails initialization process and removing unnecessary dependencies
+- DB/Redis/Elasticsearch sessions/config
+
+6. Favorite project and why
+
+1. The Tie (Professional):
+
+- Worked on multiple things
+- Optimization
+- Refactoring
+- Realtime Data Analysis
+- High throughput, low latency jobs
+- Moved infrastructure to AWS
+- Frontend Assets pipeline improvements
+- Market trending topics and high volatility
+
+2. Valve Proton (Personal)
+
+- Compatibility layer for windows programs/games on Linux,MacOS and BSDs
+- Very optimized can even beat original performance with right customization
+- Foundation of steam deck's popularity and success (As a portable gaming PC, console, retro gaming all in one)

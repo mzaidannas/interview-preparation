@@ -1,0 +1,50 @@
+Design Patterns related to architecture
+
+1. Micro-services:
+- Scalability
+- Fault Resistance
+- Choice of multiple programming languages/models
+- Individual deployments (deploy time reduction)
+- Data Isolation (Compliances, Security)
+- DevOps complexity decreases for single service
+- Greater sense of responsibility/ownership within team
+
+2. Event Driven / Message Broker:
+- Decoupling of services
+- Simpler programming paradigm (Event Loop, Event Handler)
+- Asynchronous Programming
+- Distributed Processing, Scalability
+
+3. Pub/Sub Pattern:
+- Normal synchronous flow is broken down to series of events (Better code separation)
+- Main thread can resume accepting more requests while events are processed in background
+- Better Code Maintainability
+- Very useful in communicating with frontend asynchronously like chat apps, alerting etc (websocket, http server push)
+
+4. gRPC Services
+- Lightweight in comparison with HTTP
+- Faster Response
+- Built-in code generation with .proto files, IDE support
+- More connection options like streaming (server-side, client-side and bidirectional)
+
+5. Reactive Programming
+- Programming as a stream of events. Components can subscribe to streams, map their data and perform action based on mapped results
+- Hight throughput per thread
+- Low latency
+- Simplifies programming when you need to observe multiple conditions before making an action
+
+
+Backend Patterns
+
+1. Singleton: Single Object per class (e.g config classes, api wrappers, locales, constants)
+2. Factory/Builder: Simplifies complex object building (Pre-Post conditions)
+3. Observer: Separating callbacks to their own classes
+4. Decorator: Delegate view/presentation logic that clutters views
+5. QueryObject: Wrapping complex queries with multiple filtering/conditions in their own class
+6. PolicyObject: When you have multiple conditions before performing a specific task (Authorization)
+7. ServiceObject: A simple ruby class that follows single responsibility pattern
+
+Test Related:
+
+1. Test Driven Development: More useful in stable and mission critical projects. Slows down development in prototyping/startup based projects
+2. Transactional Tests: Data should be created for each individual test and truncated afterwords
