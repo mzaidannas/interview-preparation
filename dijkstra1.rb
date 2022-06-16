@@ -31,25 +31,25 @@ class Graph
 
     @distance[source] = 0 # Distance from source to source
 
-    unvisited_node = nodes.compact # All nodes initially in Q (unvisited nodes)
+    unvisited_nodes = @nodes.compact # All nodes initially in Q (unvisited nodes)
 
-    while unvisited_node.size > 0
-      u = nil
+    while unvisited_nodes.size > 0
+      min_node = nil
 
-      unvisited_node.each do |min|
-        u = min if !u or (@distance[min] and @distance[min] < @distance[u])
+      unvisited_nodes.each do |current_node|
+        min_node = current_node if !min_node || (@distance[current_node] && @distance[current_node] < @distance[min_node])
       end
 
-      break if @distance[u].infinite?
+      break if @distance[min_node].infinite?
 
-      unvisited_node -= [u]
+      unvisited_nodes -= [min_node]
 
-      graph[u]&.keys&.each do |vertex|
-        alt = @distance[u] + graph[u][vertex]
+      graph[min_node]&.keys&.each do |vertex|
+        alt = @distance[min_node] + graph[min_node][vertex]
 
         if alt < @distance[vertex]
           @distance[vertex] = alt
-          @previous[vertex] = u # A shorter path to v has been found
+          @previous[vertex] = min_node # A shorter path to v has been found
         end
       end
 
@@ -63,7 +63,7 @@ class Graph
     @path << dest
   end
 
-  # Gets all shortests paths using dijkstra
+  # Gets all shortest paths using dijkstra
 
   def shortest_paths(source)
     @graph_paths = []

@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 # @param n {Integer} Number of parenthesis in each set
-# @return {String[]} All possible parenthesis sets
+# @return {Array<String>} All possible parenthesis sets
 def generate_parenthesis(n)
   return [] if n == 0
   return ['()'] if n == 1
@@ -15,10 +15,9 @@ def generate_parenthesis(n)
 end
 
 # @param n {Integer} Number of parenthesis in each set
-# @return {String[]} All possible parenthesis sets
+# @return {Array<String>} All possible parenthesis sets
 def generate_parenthesis2(n)
   require 'set'
-  return [] if n == 0
   return ['()'] if n == 1
 
   generate_parenthesis2(n - 1).each_with_object(Set.new) do |str, set|
