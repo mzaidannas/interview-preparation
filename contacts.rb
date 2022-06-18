@@ -132,5 +132,5 @@ File.open('contacts_input.txt', 'r') do |f|
     queries[i] = f.gets.rstrip.split
   end
 
-  File.write('contacts_output_2.txt', contacts(queries).join("\n"))
+  puts contacts(queries).join("\n")
 end
