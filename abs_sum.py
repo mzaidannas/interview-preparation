@@ -1,4 +1,5 @@
-# Java program for above approach
+#!/usr/bin/env python3
+
 # Function to calculate minimum
 # possible sum of all (arr[i] - b + i)
 def MinSum(arr, N):

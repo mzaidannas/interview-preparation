@@ -1,29 +1,42 @@
 #!/usr/bin/env ruby
 
-require 'set'
+require 'algorithms'
+include Containers
 
 def runningMedian(a)
-  set = SortedSet.new
-  puts a.inspect
+  min_heap = MinHeap.new
+  max_heap = MaxHeap.new
   # Write your code here
-  a.each_with_index do |element, index|
-    set << element
-    even = ((index + 1) % 2).zero?
-    if even
-      puts (set[((index) / 2.0).floor,((index) / 2.0).ceil].sum) / 2.0
-    else
-      puts set[(index / 2).ceil].to_f
+  a.each do |element|
+    max_heap.push(element.to_f)
+    if max_heap.size > 1 && min_heap.size > 1 && (max_heap.max > min_heap.min)
+      min_heap.push(max_heap.max!)
     end
+    if max_heap.size > min_heap.size + 1
+      min_heap.push(max_heap.max!)
+    elsif min_heap.size > max_heap.size + 1
+      max_heap.push(min_heap.min!)
+    end
+    if max_heap.size > min_heap.size
+      puts max_heap.max
+      next
+    elsif min_heap.size > max_heap.size
+      puts min_heap.min
+      next
+    end
+    puts (max_heap.max + min_heap.min) / 2
   end
 end
 
-a_count = gets.strip.to_i
+File.open('running_median_input.txt', 'r') do |f|
+  a_count = f.gets.strip.to_i
 
-a = Array.new(a_count)
+  a = Array.new(a_count)
 
-a_count.times do |i|
-  a_item = gets.strip.to_i
-  a[i] = a_item
+  a_count.times do |i|
+    a_item = f.gets.strip.to_i
+    a[i] = a_item
+  end
+
+  runningMedian(a)
 end
-
-runningMedian(a)
