@@ -9,7 +9,7 @@ def runningMedian(a)
   # Write your code here
   a.each do |element|
     max_heap.push(element.to_f)
-    if max_heap.size > 1 && min_heap.size > 1 && (max_heap.max > min_heap.min)
+    if max_heap.size > 0 && min_heap.size > 0 && (max_heap.max > min_heap.min)
       min_heap.push(max_heap.max!)
     end
     if max_heap.size > min_heap.size + 1
