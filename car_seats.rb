@@ -26,6 +26,9 @@
 # • each element of arrays P and S is an integer within the range [1..9];
 # • every friend had a seat in the car they came in; that is, P[K] 5 S[K] for each K within the range [0..N-1].
 
+# @param people {Array<Integer>} Number of people in each car
+# @param seats {Array<Integer>} Available capacity of each car
+# @return {Integer} Number of cars needed to take all friends on holiday
 def car_seats(people, seats)
   num_of_people = people.inject(:+)
   seats.sort!.reverse!.each_with_index do |num_seats, index|

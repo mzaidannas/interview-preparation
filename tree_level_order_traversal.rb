@@ -1,15 +1,6 @@
 #!/usr/bin/env ruby
 
-class Node
-  attr_accessor :info, :left, :right, :level
-
-  def initialize(info)
-    self.info = info
-    self.left = nil
-    self.right = nil
-    self.level = nil
-  end
-
+Node = Struct.new :info, :left, :right, :level do
   def to_s
     info
   end
