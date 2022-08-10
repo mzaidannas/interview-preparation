@@ -21,4 +21,10 @@ def count_family_logins(logins)
   pairs_count
 end
 
-puts count_family_logins(%w[bag cbh sfe red cbh])
+logins = []
+File.open('family_logins_input.txt', 'r') do |f|
+  until (line = f.gets).nil?
+    logins << line
+  end
+end
+puts count_family_logins(logins)
