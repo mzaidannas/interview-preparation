@@ -9,7 +9,7 @@ def MinSum(arr, range)
   end
 
   # sort the array
-  arr.sort
+  arr.sort!
 
   # calculate median
   b = arr[range / 2]
