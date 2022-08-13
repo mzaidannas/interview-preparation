@@ -2,6 +2,9 @@
 
 # Function to calculate minimum
 # possible sum of all (arr[i] - b + i)
+# @param arr {Array<Integer>} Array of numbers to find sum of
+# @param arr {Integer} Range of array to find sum of
+# @return {Integer} Minimum possible absolute sum in range
 def MinSum(arr, range)
   # Modify the array
   range.times do |i|
@@ -28,4 +31,4 @@ end
 # Driver code
 arr = [1, 5, 2, -2]
 range = arr.length
-puts(MinSum(arr, range))
+puts MinSum(arr, range)
