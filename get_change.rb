@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-#
-
 def get_change(money, price)
   currencies = [0.01, 0.05, 0.1, 0.25, 0.5, 1]
   money_returned = Array.new(6, 0)
