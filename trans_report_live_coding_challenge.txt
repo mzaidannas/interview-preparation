@@ -1,0 +1,56 @@
+# TransReport Live Coding Challenge
+
+## Railway Incident Management
+
+You are tasked with creating a dashboard for viewing railway incident metrics.
+
+# Input
+
+A CSV file of railway incidents in the following format:
+
+1. Railway company name
+2. Train number
+3. Wagon number
+4. Defect ID
+5. Incident Date, format: `yyyy-mm-dd`
+6. Incident Time: format: `hh-mm`
+
+Defect IDs:
+
+12: Filthy seat
+42: Unknown Category
+76: Broken window
+112: Door not working
+420: Lights not working
+
+Input Sample:
+
+```
+Great Western Railway,2332,5,12,2022-02-07,11:45
+Heathrow Express,19D3,6,42,2022-03-02,7:00
+Heathrow Express,19D3,6,42,2022-03-02,8:00
+Heathrow Express,19D3,6,42,2022-03-02,9:00
+ScotRail,AA1D,12,42,2022-01-06,11:45
+Stansted Express,1222R,A,76,2022-01-09,11:45
+Thameslink,FP11S,8,420,2022-01-03,11:45
+Great Western Railway,1172,8,112,2022-02-07,15:22
+Thameslink,FP112,1,112,2022-01-21,17:50
+```
+
+> NOTE: you don't necessarily need to read this from a file, you can have it as a string.
+
+# Output
+
+Please display to standard output the following metrics:
+
+1. The total number of incidents for each railway company
+2. The number of incidents reported in January
+3. Which train had the largest number of incidents
+4. The days and hours when a `Unknown Category` incident happened
+5. Given today's date is `2022-03-27`, list the incidents that occurred in the current month.
+
+# Bonus Excersises
+
+1. Write tests for the code that you've developed.
+2. Think about a higher scale metric data pipeline that has to display the same information
+in real time and explain how you would approach building such a system.
