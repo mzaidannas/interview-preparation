@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 # OddOccurrencesInArray:
 # Find value that occurs in odd number of elements

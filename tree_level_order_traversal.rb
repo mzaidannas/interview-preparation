@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 Node = Struct.new :info, :left, :right, :level do
   def to_s

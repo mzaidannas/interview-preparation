@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 # BinaryGap: Find longest sequence of zeros in binary representation of an integer.
 

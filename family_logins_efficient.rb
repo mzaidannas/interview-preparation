@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 # Q1. Given a list of strings, count number of pairs of strings where one string is increment of another.
 # For eg 'abc', 'bcd'. Each character of 'abc' when incremented gives 'bcd'.

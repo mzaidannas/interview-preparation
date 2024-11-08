@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 # We're going to make our own Contacts application! The application must perform two types of operations:
 

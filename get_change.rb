@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 def get_change(money, price)
   currencies = [0.01, 0.05, 0.1, 0.25, 0.5, 1]

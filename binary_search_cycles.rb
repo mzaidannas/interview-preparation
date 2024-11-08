@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 def binary_search_cycles(arr, val)
   l = 0
@@ -21,7 +22,7 @@ def binary_search_cycles(arr, val)
       end
     end
   end
-  return -1
+  -1
 end
 
 puts binary_search_cycles([3, 4, 5, 6, 7, 1, 2], 2)

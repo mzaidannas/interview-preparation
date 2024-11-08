@@ -1,11 +1,12 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 # Function to calculate minimum
 # possible sum of all (arr[i] - b + i)
 # @param arr {Array<Integer>} Array of numbers to find sum of
 # @param arr {Integer} Range of array to find sum of
 # @return {Integer} Minimum possible absolute sum in range
-def MinSum(arr, range)
+def min_sum(arr, range)
   # Modify the array
   range.times do |i|
     arr[i] -= (i + 1)
@@ -31,4 +32,4 @@ end
 # Driver code
 arr = [1, 5, 2, -2]
 range = arr.length
-puts MinSum(arr, range)
+puts min_sum(arr, range)

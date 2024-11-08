@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 # @param n {Integer} Number of parenthesis in each set
 # @return {Array<String>} All possible parenthesis sets

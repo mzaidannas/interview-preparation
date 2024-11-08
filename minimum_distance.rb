@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 # The distance between two array values is the number of indices between them. Given a, find the minimum distance between any pair of equal elements in the array. If no such value exists, return -1.
 
@@ -43,9 +44,7 @@ def minimum_distance(a)
   a.each_with_index do |num, current_index|
     if index_hash.key?(num)
       current_distance = current_index - index_hash[num]
-      if current_distance < minimum_distance
-        minimum_distance = current_distance
-      end
+      minimum_distance = current_distance if current_distance < minimum_distance
     end
     index_hash[num] = current_index
   end

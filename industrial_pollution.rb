@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 # An industrial company has N factories, each producing some pollution every month.
 # The company has decided to reduce its total fume emissions by equipping some of the factories with one or more filters.

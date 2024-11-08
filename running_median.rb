@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 require 'algorithms'
 include Containers
@@ -9,9 +10,7 @@ def runningMedian(a)
   # Write your code here
   a.each do |element|
     max_heap.push(element.to_f)
-    if max_heap.size > 0 && min_heap.size > 0 && (max_heap.max > min_heap.min)
-      min_heap.push(max_heap.max!)
-    end
+    min_heap.push(max_heap.max!) if max_heap.size > 0 && min_heap.size > 0 && (max_heap.max > min_heap.min)
     if max_heap.size > min_heap.size + 1
       min_heap.push(max_heap.max!)
     elsif min_heap.size > max_heap.size + 1

@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 # Count minimum swap to make string palindrome
 # Given a string S, the task is to find out the minimum no of adjacent swaps required to make string s palindrome.
@@ -24,15 +25,14 @@ def min_swaps(str)
 
   # Initialize the count of swaps
   count = 0
-  left, right = 0, str.length - 1
+  left = 0
+  right = str.length - 1
   # Loop through the string
   while left < right
     l = left
     r = right
     # If the current left character is not equal to the corresponding right character
-    while str[l] != str[r]
-      r -= 1
-    end
+    r -= 1 while str[l] != str[r]
     if l == r
       # When we found odd element move towards middle
       str[r], str[r + 1] = str[r + 1], str[r]

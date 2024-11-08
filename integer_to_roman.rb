@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 def integer_to_roman(num)
   roman = ''
@@ -19,7 +20,7 @@ def integer_to_roman(num)
   }
   roman_hash.each do |key, value|
     roman << value * (num / key)
-    num = num % key
+    num %= key
   end
   roman
 end

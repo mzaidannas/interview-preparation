@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 # @param n {Integer} Number to find factorial of
 # @return {Integer} Factorial of n

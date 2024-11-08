@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 def shortest_path_wg(v, matrix, init = 0)
   vertex = []

@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 # We're going to make our own Contacts application! The application must perform two types of operations:
 
@@ -138,8 +139,8 @@ class Trie
   end
 
   def find_words_size_starting_with(prefix)
-    stack        = []
-    word_size        = 0
+    stack = []
+    word_size = 0
     prefix_stack = []
 
     stack        << find_word(prefix)

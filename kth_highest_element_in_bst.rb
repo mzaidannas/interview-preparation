@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 # Find Kth laegest element in binary search tree
 
@@ -56,13 +57,11 @@ def kth_highest(root, k)
       next
     end
 
-    while end_.left.present?
-      end_ = end_.left
-    end
+    end_ = end_.left while end_.left.present?
 
-  end_.left = start
-  root = root.right
-  root.right = nil
+    end_.left = start
+    root = root.right
+    root.right = nil
   end
 
   start

@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 class Graph
   attr_reader :graph, :nodes, :previous, :distance # getter methods
@@ -37,7 +38,9 @@ class Graph
       min_node = nil
 
       unvisited_nodes.each do |current_node|
-        min_node = current_node if !min_node || (@distance[current_node] && @distance[current_node] < @distance[min_node])
+        if !min_node || (@distance[current_node] && @distance[current_node] < @distance[min_node])
+          min_node = current_node
+        end
       end
 
       break if @distance[min_node].infinite?

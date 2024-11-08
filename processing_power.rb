@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 # Given a list servers. Their processing power is given as an array of integers, and boot power as an array of integers.
 # Write a function to return the max length of sub array which's power consumption is less than or equal to max power limit.

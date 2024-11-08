@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 # A word is an anagram of another word if both use the same letters in the same quantity, but arranged differently.
 
 # - anagram('finder', 'Friend') --> true

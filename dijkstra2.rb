@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 class Graph
   Vertex = Struct.new(:name, :neighbours, :dist, :prev)
@@ -52,7 +53,7 @@ class Graph
 
   def shortest_paths(source)
     dikstra(source)
-    paths = (@nodes - [source]).map do |target|
+    (@nodes - [source]).map do |target|
       path = []
       u = target
       while u
@@ -61,7 +62,6 @@ class Graph
       end
       [path, @vertices[target].dist.infinite? ? -1 : @vertices[target].dist]
     end
-    paths
   end
 
   def to_s

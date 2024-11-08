@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 # CyclicRotation
 #
@@ -42,7 +43,7 @@
 def cyclic_rotation(array, rotations)
   return array if array.length.zero? || rotations <= 0
 
-  rotations = rotations % array.length
+  rotations %= array.length
   return array if rotations.zero?
 
   rotations = array.length - rotations

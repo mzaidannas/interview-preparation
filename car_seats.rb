@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 # A group of friends is going on holiday together.
 # They have come to a meeting point (the start of the journey) using N cars.

@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 class Graph
   Edge = Struct.new(:weight, :from, :to)
@@ -16,7 +17,7 @@ class Graph
     distances[starting_node - 1] = 0
     unvisited_nodes = nodes.dup - [starting_node]
     while unvisited_nodes.length > 0
-    # nodes.length.times do |_i|
+      # nodes.length.times do |_i|
       edges.each do |edge|
         if distances[edge.from - 1] + edge.weight < distances[edge.to - 1]
           distances[edge.to - 1] = distances[edge.from - 1] + edge.weight

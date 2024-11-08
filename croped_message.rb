@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 # There is a forum that has a limit of K characters per entry.
 # In this task your job is to implement an algorithm for cropping messages that are too long.
