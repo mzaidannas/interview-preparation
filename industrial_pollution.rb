@@ -25,7 +25,7 @@
 # because it is sufficient to install one filter at each factory producing a non-zero amount of pollution.
 
 def industrial_pollution(pollutions)
-  total_pollution = pollutions.inject(:+)
+  total_pollution = pollutions.sum
   half_pollution = total_pollution / 2.0
 
   filters = 0

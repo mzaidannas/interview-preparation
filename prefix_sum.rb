@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 n = 5
 queries = [
   1,
@@ -15,9 +17,7 @@ queries = [
 ans = Array.new(n, 0)
 queries.each do |i|
   ans[i[0] - 1] += i[2]
-  if i[1] < ans.length
-    ans[i[1]] -= i[2]
-  end
+  ans[i[1]] -= i[2] if i[1] < ans.length
 end
 s = 0
 max = 0

@@ -64,9 +64,9 @@ def contacts(queries)
   queries.each do |query|
     operation, str = query
     if operation == 'add'
-      0..str.length.times do |i|
+      0..(str.length.times do |i|
         prefix_counts[str[0..i]] += 1
-      end
+      end)
     else
       finds << prefix_counts[str]
     end

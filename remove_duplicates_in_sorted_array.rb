@@ -4,7 +4,7 @@
 def remove_duplicates_in_sorted_array(arr)
   j = 1
   previous = arr[0]
-  arr[1..].each_with_index do |num, i|
+  arr[1..].each_with_index do |num, _i|
     next unless num != previous
 
     previous = num

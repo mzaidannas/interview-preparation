@@ -16,7 +16,7 @@ class Graph
   def shortest_distance
     distances[starting_node - 1] = 0
     unvisited_nodes = nodes.dup - [starting_node]
-    while unvisited_nodes.length > 0
+    while unvisited_nodes.length.positive?
       # nodes.length.times do |_i|
       edges.each do |edge|
         if distances[edge.from - 1] + edge.weight < distances[edge.to - 1]
@@ -38,7 +38,7 @@ File.open('shortest_path_graph_input.txt') do |f|
   queries.times do
     num_nodes, num_edges = f.gets.chomp.split.map(&:to_i)
     nodes = (1..num_nodes).step.to_a
-    edges = num_edges.times.map do
+    edges = Array.new(num_edges) do
       f.gets.chomp.split.map(&:to_i)
     end
     starting_node = f.gets.chomp.to_i

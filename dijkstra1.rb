@@ -11,10 +11,10 @@ class Graph
 
   # connect each node with target and weight
   def connect_graph(source, target, weight)
-    if !graph.key?(source)
-      graph[source] = { target => weight }
-    else
+    if graph.key?(source)
       graph[source][target] = weight
+    else
+      graph[source] = { target => weight }
     end
   end
 
@@ -34,20 +34,18 @@ class Graph
 
     unvisited_nodes = @nodes.compact # All nodes initially in Q (unvisited nodes)
 
-    while unvisited_nodes.size > 0
+    while unvisited_nodes.size.positive?
       min_node = nil
 
       unvisited_nodes.each do |current_node|
-        if !min_node || (@distance[current_node] && @distance[current_node] < @distance[min_node])
-          min_node = current_node
-        end
+        min_node = current_node if !min_node || (@distance[current_node] && @distance[current_node] < @distance[min_node])
       end
 
       break if @distance[min_node].infinite?
 
       unvisited_nodes -= [min_node]
 
-      graph[min_node]&.keys&.each do |vertex|
+      graph[min_node]&.each_key do |vertex|
         alt = @distance[min_node] + graph[min_node][vertex]
 
         if alt < @distance[vertex]

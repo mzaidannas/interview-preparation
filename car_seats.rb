@@ -31,7 +31,7 @@
 # @param seats {Array<Integer>} Available capacity of each car
 # @return {Integer} Number of cars needed to take all friends on holiday
 def car_seats(people, seats)
-  num_of_people = people.inject(:+)
+  num_of_people = people.sum
   seats.sort!.reverse!.each_with_index do |num_seats, index|
     num_of_people -= num_seats
     return index + 1 if num_of_people <= 0

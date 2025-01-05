@@ -19,7 +19,7 @@ def integer_to_roman(num)
     1 => 'I'
   }
   roman_hash.each do |key, value|
-    roman << value * (num / key)
+    roman << (value * (num / key))
     num %= key
   end
   roman

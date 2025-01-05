@@ -7,7 +7,7 @@ require 'json'
 require 'csv'
 
 def get_address(lat, lon)
-  if lat.is_a?(Float) && !lat.nil? || !lon.nil? || (!lon == 0 && !lat == 0)
+  if (lat.is_a?(Float) && !lat.nil?) || !lon.nil? || (!lon.zero? && !lat.zero?)
     resp = HTTParty.get("https://nominatim.openstreetmap.org/reverse?lat=#{lat}&lon=#{lon}&format=jsonv2",
                         format: :plain)
     resp = JSON.parse(resp.body, symbolize_names: true)
@@ -17,7 +17,7 @@ def get_address(lat, lon)
     full_address += if address[:house_number].nil?
                       'NaN'
                     else
-                      "#{address[:house_number]}"
+                      (address[:house_number]).to_s
                     end
     full_address += if address[:road].nil?
                       ' NaN'
@@ -32,7 +32,7 @@ def process_csv(file_url)
   Enumerator.new do |yielder|
     lines = 0
     remaining = ''
-    response = HTTParty.get(file_url, stream_body: true) do |chunk|
+    HTTParty.get(file_url, stream_body: true) do |chunk|
       if [301, 302].include?(chunk.code)
         print 'skip writing for redirect'
       elsif chunk.code == 200

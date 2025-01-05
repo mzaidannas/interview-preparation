@@ -41,7 +41,7 @@
 # .each element of array A is an integer within the range [-1,000, 1,000]
 
 def cyclic_rotation(array, rotations)
-  return array if array.length.zero? || rotations <= 0
+  return array if array.empty? || rotations <= 0
 
   rotations %= array.length
   return array if rotations.zero?

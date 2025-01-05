@@ -37,8 +37,6 @@ def two_sum(nums, target)
   num_hash = {}
   nums.each_with_index do |num, index|
     num_hash[num] = index
-  end
-  nums.each_with_index do |num, index|
     other_num = target - num
     return [index, num_hash[other_num]] unless num_hash[other_num].nil? || num_hash[other_num] == index
   end

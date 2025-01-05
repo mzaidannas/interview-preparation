@@ -22,7 +22,7 @@ class Graph
     q = @vertices.values
     @vertices[source].dist = 0
     until q.empty?
-      u = q.min_by { |vetex| vetex.dist }
+      u = q.min_by(&:dist)
       break if u.dist == Float::INFINITY
 
       q.delete(u)
@@ -73,7 +73,7 @@ File.open('shortest_path_graph_input.txt', 'r') do |f|
   queries = f.gets.chomp.to_i
   queries.times do
     num_nodes, num_edges = f.gets.chomp.split.map(&:to_i)
-    edges = num_edges.times.map do
+    edges = Array.new(num_edges) do
       f.gets.chomp.split.map(&:to_i) << 6
     end
     starting_node = f.gets.chomp.to_i

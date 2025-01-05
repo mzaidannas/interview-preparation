@@ -1,2 +1,5 @@
 .vscode
 .ruby-version
+.tool-versions
+
+*.class

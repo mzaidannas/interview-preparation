@@ -118,7 +118,7 @@ class Trie
     prefix_stack = []
 
     stack        << find_word(prefix)
-    prefix_stack << prefix.chars.take(prefix.size - 1)
+    prefix_stack << prefix[0...prefix.size - 1].chars
 
     return [] unless stack.first
 
@@ -144,7 +144,7 @@ class Trie
     prefix_stack = []
 
     stack        << find_word(prefix)
-    prefix_stack << prefix.chars.take(prefix.size - 1)
+    prefix_stack << prefix[0...prefix.size - 1].chars
 
     return word_size unless stack.first
 

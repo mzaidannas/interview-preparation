@@ -20,7 +20,7 @@ end
 # @return {Hash}
 def hash_literal(str)
   chars_hash = {}
-  str.downcase.gsub(/[^\w]/, '').split('').each do |l|
+  str.downcase.gsub(/[^\w]/, '').chars.each do |l|
     chars_hash[l] = chars_hash[l].to_i + 1
   end
 

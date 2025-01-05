@@ -21,14 +21,14 @@ def max_processing_power(processing_power, booting_power, max_power)
 
   while r < booting_power.length
     # Clear smaller values before appending the new value
-    window.pop while !window.empty? and window[-1] < booting_power[r]
+    window.pop while !window.empty? && (window[-1] < booting_power[r])
     # Append new value, expand the sliding window
     window.append(booting_power[r])
     # Get the max val in the curr sliding window from deque
     max_val = window[0]
     sum_val += processing_power[r]
     r += 1 # Move forward the right pointer
-    consmp = max_val + sum_val * (r - l)
+    consmp = max_val + (sum_val * (r - l))
 
     # Shrink the window when consmp bigger than the threshold
     while consmp > max_power
@@ -38,7 +38,7 @@ def max_processing_power(processing_power, booting_power, max_power)
       max_val = window[0]
       sum_val -= processing_power[l]
       l += 1 # Move forward the left pointer
-      consmp = max_val + sum_val * (r - l)
+      consmp = max_val + (sum_val * (r - l))
     end
     # Consmp is no bigger than the max_power, satisfying the condition, update the max length
     result = [result, r - l].max

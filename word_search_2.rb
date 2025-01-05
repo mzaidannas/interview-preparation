@@ -34,8 +34,8 @@ def dfs(board, i, j, p, res)
   end
 
   board[i][j] = '#'
-  dfs(board, i - 1, j, p, res) if i > 0
-  dfs(board, i, j - 1, p, res) if j > 0
+  dfs(board, i - 1, j, p, res) if i.positive?
+  dfs(board, i, j - 1, p, res) if j.positive?
   dfs(board, i + 1, j, p, res) if i < board.length - 1
   dfs(board, i, j + 1, p, res) if j < board[0].length - 1
   board[i][j] = c
@@ -47,8 +47,8 @@ end
 def find_words(board, words)
   res = []
   root = build_trie(words)
-  for i in 0..board.length - 1
-    for j in 0..board[0].length - 1
+  (0..board.length - 1).each do |i|
+    (0..board[0].length - 1).each do |j|
       dfs(board, i, j, root, res)
     end
   end

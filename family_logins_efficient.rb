@@ -13,8 +13,6 @@ def count_family_logins(logins)
   hash = Hash.new(0)
   logins.each do |login|
     hash[login] += 1
-  end
-  logins.each do |login|
     next_word = login.each_char.map(&:next).join
     pairs_count += hash[next_word]
   end

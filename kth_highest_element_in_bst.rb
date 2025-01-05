@@ -48,7 +48,7 @@ end
 def kth_highest(root, k)
   return -1 if root.nil?
 
-  while k > 0
+  while k.positive?
     start = root
     end_ = root.right
     unless end_.nil?

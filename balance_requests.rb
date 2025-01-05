@@ -9,10 +9,12 @@ def solution(balances, requests)
   }.freeze
 
   requests.each_with_index do |request, index|
-    request = request.split(' ')
+    request = request.split
     sum = request[sum_h[request[0]]].to_i
     mode = request[0]
-    if request[1].to_i.zero? || request[1].to_i > balances.length || (mode != 'deposit' && sum > balances[request[1].to_i - 1]) || (request.length > 3 && request[2].to_i > balances.length)
+    if request[1].to_i.zero? || request[1].to_i > balances.length ||
+       (mode != 'deposit' && sum > balances[request[1].to_i - 1]) ||
+       (request.length > 3 && request[2].to_i > balances.length)
       return [-(index + 1)]
     elsif mode == 'transfer'
       balances[request[1].to_i - 1] -= sum
